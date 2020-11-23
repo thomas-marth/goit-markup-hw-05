@@ -252,7 +252,7 @@ footer .container {
 .footer-social-icon {
   width: 44px;
   height: 44px;
-  fill: #afb1b8;
+  fill: #fff;
 
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
