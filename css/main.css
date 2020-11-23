@@ -516,6 +516,12 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.is-hiddeen {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .modal {
   position: absolute;
   width: 528px;
@@ -523,7 +529,6 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
   background: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -540,12 +545,6 @@
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
-}
-
-.is-hiddeen {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 .modal-x-icon {
