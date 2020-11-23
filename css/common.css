@@ -25,7 +25,6 @@ body {
   letter-spacing: 0.03em;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 80px;
 }
 
 .list {
@@ -159,7 +158,7 @@ button {
 .page-header {
   background-color: var(--primary-bg-color);
   border-bottom: 1px solid #ececec;
-  position: fixed;
+  position: sticky;
   width: 100%;
   min-height: 80px;
   top: 0;
