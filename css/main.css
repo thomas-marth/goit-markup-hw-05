@@ -371,8 +371,7 @@
   margin-right: 0;
 } */
 
-.project-thumb,
-.first-card {
+.project-thumb {
   position: relative;
   overflow: hidden;
 }
@@ -419,12 +418,12 @@
   width: 370px;
 }
 
-/* .project-thumb > .overlay {
+.project-thumb > .overlay {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.55;
   width: 100%;
-  height: 100px;
+  height: 100%;
   color: #fff;
   background: rgba(33, 150, 243, 0.9);
   position: absolute;
@@ -433,17 +432,22 @@
   margin: 0;
   padding: 63px 24px;
   opacity: 0;
-}
+  transform: translateY(100%);
 
-.project-thumb > .overlay:hover,
-.project-thumb > .overlay:focus {
-  opacity: 1;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(-10px);
-} */
+  transition-property: all;
+}
 
-.project-thumb::before {
+.cards:hover .project-thumb > .overlay,
+.cards:focus .project-thumb > .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Var 2 (::before) */
+
+/* .project-thumb::before {
   content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, qui laborum labore voluptatibus dicta repellat voluptas eligendi eius aut neque quas tempora';
   font-weight: 400;
   font-size: 18px;
@@ -488,7 +492,7 @@
   opacity: 1;
 
   transform: translateY(-100%);
-}
+} */
 
 .project .cards:nth-child(3n) {
   margin-right: 0;
