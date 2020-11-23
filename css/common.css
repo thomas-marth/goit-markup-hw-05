@@ -159,11 +159,11 @@ button {
 .page-header {
   background-color: var(--primary-bg-color);
   border-bottom: 1px solid #ececec;
-  -webkit-sticky: sticky;
   position: fixed;
   width: 100%;
   min-height: 80px;
   top: 0;
+  left: 0;
   z-index: 1;
 }
 
