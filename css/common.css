@@ -35,6 +35,9 @@ body {
 
 a {
   text-decoration: none;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container {
@@ -85,6 +88,16 @@ button {
   margin-right: 50px;
 }
 
+.link.current::before {
+  position: absolute;
+  content: '';
+  background-color: var(--accent-color);
+  width: 100%;
+  height: 4px;
+  top: 77px;
+  border-radius: 2px;
+}
+
 .site-nav .link {
   display: block;
   color: var(--secondary-text-color);
@@ -98,6 +111,7 @@ button {
 
 .site-nav .link.current {
   color: var(--accent-color);
+  position: relative;
 }
 
 .link:hover,
@@ -112,12 +126,16 @@ button {
 .header-contacts .link {
   display: flex;
   align-items: center;
+  height: 80px;
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   fill: #757575;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contacts .link:hover {
@@ -142,7 +160,9 @@ button {
   border-bottom: 1px solid #ececec;
   -webkit-sticky: sticky;
   position: sticky;
+  width: 100%;
   top: 0;
+  z-index: 1;
 }
 
 /* ================= Footer ================= */
@@ -189,6 +209,11 @@ footer .container {
   margin-right: 70px;
 }
 
+.location > .link {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .foter-cta {
   font-weight: 700;
   font-size: 14px;
@@ -226,6 +251,9 @@ footer .container {
   width: 44px;
   height: 44px;
   fill: #afb1b8;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-icon:hover,

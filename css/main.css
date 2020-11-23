@@ -72,6 +72,9 @@
   min-width: 200px;
   height: 50px;
   cursor: pointer;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero .btn:hover {
@@ -155,6 +158,27 @@
 .services .item {
   justify-content: space-between;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.service-overlay {
+  position: absolute;
+  margin: 0;
+  width: 370px;
+  min-height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  padding: 0;
+  bottom: 0;
+}
+
+.service-overlay > .title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.17;
+  text-transform: uppercase;
+  color: var(--primary-bg-color);
+  text-align: center;
+  margin: 27px 0;
 }
 
 .services img {
@@ -219,6 +243,9 @@
   display: flex;
   background-color: var(--primary-bg-color);
   border-radius: 50%;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-links:hover,
@@ -230,6 +257,9 @@
   width: 44px;
   height: 44px;
   fill: #afb1b8;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon:hover,
@@ -245,6 +275,9 @@
 
 .clients-icon {
   fill: #afb1b8;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon:hover,
@@ -260,6 +293,9 @@
   height: 90px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-links:hover,
@@ -305,6 +341,9 @@
   line-height: 1.62;
   min-width: 73px;
   padding: 6px 22px;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filters button:hover,
@@ -331,6 +370,12 @@
 /* .project.list:nth-child(3n) {
   margin-right: 0;
 } */
+
+.project-thumb,
+.first-card {
+  position: relative;
+  overflow: hidden;
+}
 
 .project img {
   display: block;
@@ -374,6 +419,77 @@
   width: 370px;
 }
 
+/* .project-thumb > .overlay {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  width: 100%;
+  height: 100px;
+  color: #fff;
+  background: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 63px 24px;
+  opacity: 0;
+}
+
+.project-thumb > .overlay:hover,
+.project-thumb > .overlay:focus {
+  opacity: 1;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-10px);
+} */
+
+.project-thumb::before {
+  content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, qui laborum labore voluptatibus dicta repellat voluptas eligendi eius aut neque quas tempora';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 63px 24px;
+  opacity: 0;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.first-card::before {
+  content: 'Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 63px 24px;
+  opacity: 0;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-thumb:hover::before,
+.first-card:hover::before {
+  opacity: 1;
+
+  transform: translateY(-100%);
+}
+
 .project .cards:nth-child(3n) {
   margin-right: 0;
 }
@@ -385,4 +501,55 @@
 .project .cards:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* ============= Modal ============= */
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  min-height: 581px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.is-hiddeen {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-x-icon {
+  width: 11px;
+  height: 11px;
+  fill: #000;
 }
